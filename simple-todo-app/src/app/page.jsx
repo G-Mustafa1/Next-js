@@ -5,7 +5,7 @@ import TodoFrom from '@/components/TodoForm';
 import TodoList from '@/components/TodoList';
 
 const Home = async () => {
-  const api = await fetch('http://localhost:3000/api/todos',{
+  const api = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/todos`,{
     cache: 'no-cache'
   })
   const responst = await api.json();
