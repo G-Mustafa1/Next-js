@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { addTodo } from './actions/todos';
-import TodoFrom from '@/components/TodoFrom';
+import TodoFrom from '@/components/TodoForm';
 import TodoList from '@/components/TodoList';
 
 const Home = async () => {

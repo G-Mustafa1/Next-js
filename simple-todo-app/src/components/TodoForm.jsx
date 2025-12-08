@@ -1,5 +1,5 @@
 "use client"
-import { addTodo } from '@/app/actions/todos'
+import { addTodo } from '@/app/actions/todos';
 import React, { useRef } from 'react'
 
 const TodoFrom = () => {
