@@ -9,17 +9,16 @@ const subcategoriesSchema = new Schema({
     },
     description: {
         type: String,
-        required: true,
-        trim: true,
     },
     thumbnail: {
         type: String,
-        required: true,
-        trim: true,
+        // required: true,
+        // trim: true,
     },
     category: {
         type: mongoose.Types.ObjectId,
-        ref: 'Categories'
+        ref: 'Categories',
+        required: true
     }
 },
     {
@@ -28,6 +27,4 @@ const subcategoriesSchema = new Schema({
     }
 );
 
-const SubCategory = mongoose.models.User || mongoose.model('SubCategories', subcategoriesSchema);
-
-export default SubCategory;
+export const SubCategory = mongoose.models.SubCategories || mongoose.model('SubCategories', subcategoriesSchema);

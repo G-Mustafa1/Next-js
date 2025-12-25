@@ -24,6 +24,4 @@ const categorySchema = new Schema({
     }
 );
 
-const Categorys = mongoose.models.User || mongoose.model('Categories', categorySchema);
-
-export default Categorys;
+export const Categorys = mongoose.models.Categories || mongoose.model('Categories', categorySchema);
