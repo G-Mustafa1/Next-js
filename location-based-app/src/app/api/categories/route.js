@@ -22,10 +22,24 @@ export async function POST(request) {
         await connectDB();
 
         const body = await request.json();
-        const user = new Categorys(body);
-        await user.save();
+        const { title, description, thumbnail} = body;
+        // const user = new Categorys(body);
+        if (!title || !thumbnail) {
+            return Response.json(
+                { message: "Title and thumbnail are required" },
+                { status: 400 }
+            );
+        }
+
+        const categories = new Categorys({
+            title,
+            description,
+            thumbnail
+        })
+
+        await categories.save();
         return Response.json(
-            { message: "Category created successfully", user }, 
+            { message: "Category created successfully", categories }, 
             { status: 201 }
         );
     } catch (error) {

@@ -1,3 +1,4 @@
+import { getCategories } from "@/app/actions/categories";
 import AddCategories from "@/components/admin/AddCategories";
 import {
   Table,
@@ -11,21 +12,8 @@ import {
 import Image from "next/image";
 import React from "react";
 
-const Categories = () => {
-  const categories = [
-    {
-      title: "Birthday Party",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      thumbnail:
-        "https://images.unsplash.com/photo-1583875762487-5f8f7c718d14?w=600",
-    },
-    {
-      title: "Wedding Ceremony",
-      description: "A beautiful wedding event.",
-      thumbnail:
-        "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600",
-    },
-  ];
+const Categories = async () => {
+  const categories = await getCategories()    
 
   return (
     <div className="p-4 sm:p-8">
@@ -55,7 +43,7 @@ const Categories = () => {
             </TableHeader>
 
             <TableBody>
-              {categories.map((item) => (
+              {categories?.users?.map((item) => (
                 <TableRow
                   key={item.title}
                   className="transition hover:bg-indigo-50/50 dark:hover:bg-slate-800"
@@ -65,9 +53,11 @@ const Categories = () => {
                       {/* Image */}
                       <div className="relative h-[70px] w-[110px] shrink-0 overflow-hidden rounded-md border bg-slate-100">
                         <Image
+                          width={110}
+                          height={70}
                           src={item.thumbnail}
                           alt={item.title}
-                          fill
+                          // fill
                           className="object-cover"
                         />
                       </div>
