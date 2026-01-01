@@ -24,9 +24,7 @@ const userSchema = new Schema({
     },
     password: {
         type: String,
-        required: true,
         minLength: 7,
-        trim: true,
     },
     location: {
         lat: Number,
@@ -45,6 +43,11 @@ const userSchema = new Schema({
     bio: {
         type: String,
         // required: true,
+    },
+    role: {
+        type: String,
+        enum: ['user', 'admin'],
+        default: 'user'
     }
 
 },

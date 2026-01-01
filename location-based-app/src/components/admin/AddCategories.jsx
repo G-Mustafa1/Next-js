@@ -16,6 +16,12 @@ import { Plus } from "lucide-react";
 const AddCategories = () => {
   const [open, setOpen] = useState(false);
 
+  const handleAddCategory = (formData) => {
+    console.log("formData", formData);
+    const file = formData.get("thumbnail");
+    console.log("file", file);    
+  }
+
   return (
     <>
       <Button
@@ -32,20 +38,20 @@ const AddCategories = () => {
             <DialogTitle>Add New Category</DialogTitle>
           </DialogHeader>
 
-          <form className="space-y-4">
+          <form action={handleAddCategory} className="space-y-4">
             <div className="space-y-1">
               <Label>Title</Label>
-              <Input placeholder="Category title" />
+              <Input required type="text" name="title" placeholder="Category title" />
             </div>
 
             <div className="space-y-1">
               <Label>Description</Label>
-              <Textarea placeholder="Short description" />
+              <Textarea required name="description" placeholder="Short description" />
             </div>
 
             <div className="space-y-1">
               <Label>Thumbnail</Label>
-              <Input type="file" />
+              <Input required name="thumbnail" type="file" />
             </div>
 
             <div className="flex justify-end gap-2 pt-2">
