@@ -19,7 +19,6 @@ const Categories = async () => {
     <div className="p-4 sm:p-8">
       <div className="mx-auto max-w-6xl space-y-6">
 
-        {/* Header */}
         <div className="flex items-center justify-between">
           <h1 className="text-2xl font-semibold text-slate-800 dark:text-slate-100">
             Categories
@@ -50,7 +49,6 @@ const Categories = async () => {
                 >
                   <TableCell>
                     <div className="flex items-center gap-4">
-                      {/* Image */}
                       <div className="relative h-[70px] w-[110px] shrink-0 overflow-hidden rounded-md border bg-slate-100">
                         <Image
                           width={110}
@@ -62,7 +60,6 @@ const Categories = async () => {
                         />
                       </div>
 
-                      {/* Text */}
                       <div>
                         <p className="font-medium text-slate-900 dark:text-slate-100">
                           {item.title}
