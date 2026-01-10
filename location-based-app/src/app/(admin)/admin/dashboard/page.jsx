@@ -1,7 +1,6 @@
 import BarCharts from '@/components/admin/BarCharts'
 import React from 'react'
 
-// import { Bar, BarChart } from "recharts"
 
 const Dashboard = () => {
     return (
